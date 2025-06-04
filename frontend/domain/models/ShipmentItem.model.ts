@@ -1,7 +1,7 @@
-import { WarehouseItem } from "./WarehouseItem.model";
+import { Product } from "./Product.model";
 
 export interface ShipmentItem {
     id: string;
     quantity: number;
-    products: Array<WarehouseItem>
+    products: Array<Product>
 }

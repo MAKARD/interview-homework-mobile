@@ -5,7 +5,7 @@ interface Params {
     id: string;
 }
 
-export const useWarehouse = ({
+export const useWarehouseItem = ({
     id
 }: Params) => {
     const router = useRouter();

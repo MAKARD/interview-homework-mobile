@@ -9,7 +9,7 @@ export namespace GetWarehouseList {
     }
 
     export interface ResponseDTO {
-        warehouses: Array<Warehouse>;
+        warehouses: Array<WarehouseItem>;
     }
 }
 
@@ -20,31 +20,4 @@ export namespace GetWarehouseDetails {
     }
 
     export type ResponseDTO = Warehouse;
-}
-
-export namespace DeleteWarehouseItem {
-    export const api: API = {
-        method: 'DELETE',
-        path: '/warehouses/:warehouseId/:warehouseItemId'
-    }
-}
-
-export namespace EditWarehouseItem {
-    export const api: API = {
-        method: 'PATCH',
-        path: '/warehouses/:warehouseId/:warehouseItemId'
-    }
-
-    export type RequestDTO = Partial<Pick<WarehouseItem, "description" | "imageUrl" | "name" | "quantity" | "unitPrice">>
-}
-
-export namespace CreateWarehouseItem {
-    export const api: API = {
-        method: "POST",
-        path: '/warehouses/:warehouseId'
-    }
-
-    export type RequestDTO = Pick<WarehouseItem, "description" | "imageUrl" | "name" | "quantity" | "unitPrice">;
-
-    export type ResponseDTO = WarehouseItem;
 }

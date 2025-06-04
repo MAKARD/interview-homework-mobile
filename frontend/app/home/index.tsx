@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
 
-import { Placeholder, Warehouse } from './components';
+import { Placeholder, WarehouseItem } from './components';
 
 import { useHome } from './useHome';
 import { styles } from './styles';
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         <View style={styles.container}>
             <ScrollView>
                 {warehouses.map((warehouse) => (
-                    <Warehouse
+                    <WarehouseItem
                         id={warehouse.id}
                         name={warehouse.name}
                         key={warehouse.id}

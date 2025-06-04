@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { Pressable, Text } from 'react-native';
 
-import { useWarehouse } from './useWarehouse';
+import { useWarehouseItem } from './useWarehouseItem';
 
 interface Props {
     id: string;
     name: string;
 }
 
-export const Warehouse: React.FC<Props> = ({
+export const WarehouseItem: React.FC<Props> = ({
     id,
     name
 }) => {
-    const { onPress } = useWarehouse({ id });
+    const { onPress } = useWarehouseItem({ id });
 
     return (
         <Pressable onPress={onPress}>
