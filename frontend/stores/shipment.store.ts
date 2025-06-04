@@ -5,7 +5,6 @@ import { GetShipmentsList } from '@/domain/apis/shipment.api';
 import { Shipment } from '@/domain/models/Shipment.model';
 import { HTTPService } from '@/infrastructure/services/HTTPService';
 
-
 const getShipmentsList = HTTPService.createRequest<GetShipmentsList.ResponseDTO, {}, {}>(GetShipmentsList.api);
 
 interface ShipmentStore {

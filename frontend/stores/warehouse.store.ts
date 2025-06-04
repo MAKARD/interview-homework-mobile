@@ -20,6 +20,13 @@ const createWarehouseItem = HTTPService.createRequest<CreateWarehouseItem.Respon
 interface WarehouseStore {
     warehouses: Array<Warehouse>;
     warehouseDetails?: Warehouse;
+
+    clearWarehouseDetails(): void;
+    fetchWarehouses(): Promise<void>;
+    fetchWarehouseDetails(warehouseId: string): Promise<void>;
+    deleteWarehouseItem(warehouseId: string,warehouseItemId: string): Promise<void>;
+    editWarehouseItem(warehouseId: string, warehouseItemId: string, data: EditWarehouseItem.RequestDTO): Promise<void>;
+    createWarehouseItem(warehouseId: string, data: CreateWarehouseItem.RequestDTO): Promise<void>;
 }
 
 export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
@@ -40,7 +47,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouses: response.warehouses
         });
     },
-    fetchWarehouseDetails: async (warehouseId: string) => {
+    fetchWarehouseDetails: async (warehouseId) => {
         const response = await getWarehouseDetails({
             body: {},
             queryParams: {},
@@ -51,7 +58,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouseDetails: response,
         });
     },
-    deleteWarehouseItem: async (warehouseId: string, warehouseItemId: string) => {
+    deleteWarehouseItem: async (warehouseId, warehouseItemId) => {
         await deleteWarehouseItem({
             body: {},
             queryParams: {},
@@ -72,7 +79,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouse.products = warehouse.products.filter((product) => product.id !== warehouseItemId);
         });
     },
-    editWarehouseItem: async (warehouseId: string, warehouseItemId: string, data: EditWarehouseItem.RequestDTO) => {
+    editWarehouseItem: async (warehouseId, warehouseItemId, data) => {
         await editWarehouseItem({
             body: data,
             queryParams: {},
@@ -103,7 +110,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             product.unitPrice = data.unitPrice || product.unitPrice;
         });
     },
-    createWarehouseItem: async (warehouseId: string, data: CreateWarehouseItem.RequestDTO) => {
+    createWarehouseItem: async (warehouseId, data) => {
         const response = await createWarehouseItem({
             body: data,
             queryParams: {},
