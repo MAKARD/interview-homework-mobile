@@ -17,7 +17,7 @@ export const useProduct = ({
     }, [id, warehouseId]);
 
     const onUpdate = React.useCallback(() => {
-        // router.navigate(`/update-product?warehouseId=${warehouseId}&productId=${id}`);
+        router.navigate(`/edit-product?warehouseId=${warehouseId}&productId=${id}`);
     }, [id, warehouseId]);
 
     return {
