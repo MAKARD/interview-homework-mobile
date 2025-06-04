@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Pressable, Text } from 'react-native';
 
 import { ProductInput } from '../ProductInput';
-import { useEditForm, UseEditFormParams } from './useEditForm';
+import { useForm, UseFormParams } from './useForm';
 
-interface Props extends UseEditFormParams {}
+interface Props extends UseFormParams {}
 
-export const EditForm: React.FC<Props> = ({
+export const Form: React.FC<Props> = ({
     onSave,
     productId
 }) => {
@@ -21,7 +21,7 @@ export const EditForm: React.FC<Props> = ({
         onChangeQuantity,
         onChangeUnitPrice,
         onSavePress
-    } = useEditForm({ onSave, productId });
+    } = useForm({ onSave, productId });
 
     return (
         <>

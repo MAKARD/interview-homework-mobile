@@ -13,11 +13,11 @@ export const useProduct = ({
     const router = useRouter();
 
     const onDelete = React.useCallback(() => {
-        router.navigate(`/delete-product?warehouseId=${warehouseId}&productId=${id}`);
+        router.navigate(`/product/delete?warehouseId=${warehouseId}&productId=${id}`);
     }, [id, warehouseId]);
 
     const onUpdate = React.useCallback(() => {
-        router.navigate(`/edit-product?warehouseId=${warehouseId}&productId=${id}`);
+        router.navigate(`/product/edit?warehouseId=${warehouseId}&productId=${id}`);
     }, [id, warehouseId]);
 
     return {

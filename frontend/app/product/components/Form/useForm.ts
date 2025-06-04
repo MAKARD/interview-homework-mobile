@@ -1,17 +1,24 @@
 import * as React from 'react';
 
-import { EditProduct } from '@/domain/apis/product.api';
 import { useWarehouse } from '@/stores/warehouse.store';
 
-export interface UseEditFormParams {
-    productId: string;
-    onSave: (data: EditProduct.RequestDTO) => void;
+interface ProductData {
+    name: string;
+    description: string;
+    quantity: number;
+    unitPrice: number;
+    imageUrl: string;
 }
 
-export const useEditForm = ({
+export interface UseFormParams {
+    productId?: string;
+    onSave: (data: ProductData) => void;
+}
+
+export const useForm = ({
     onSave,
     productId
-}: UseEditFormParams) => {
+}: UseFormParams) => {
     const product = useWarehouse((state) => state.warehouseDetails?.products.find((product) => product.id === productId));
 
     const [values, setValues] = React.useState({
@@ -19,6 +26,7 @@ export const useEditForm = ({
         description: product?.description || "",
         quantity: product?.quantity || 0,
         unitPrice: product?.unitPrice || 0,
+        imageUrl: product?.imageUrl || ""
     });
 
     const onChangeImage = React.useCallback(() => {

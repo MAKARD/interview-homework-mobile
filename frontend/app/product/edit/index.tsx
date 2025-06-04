@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
 
 import { Loader } from '@/ui/components';
+import { Form } from '../components';
 
 import { useEditProduct } from './useEditProduct';
-import { EditForm } from './components/EditForm/EditForm';
 
 const EditProduct: React.FC = () => {
     const {
@@ -22,7 +22,7 @@ const EditProduct: React.FC = () => {
                     source={{ uri: imageUrl }}
                 />
             )}
-            <EditForm
+            <Form
                 productId={productId}
                 onSave={onProceed}
             />

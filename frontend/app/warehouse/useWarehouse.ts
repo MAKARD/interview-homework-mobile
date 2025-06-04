@@ -17,7 +17,7 @@ export const useWarehouse = () => {
     }, [params.id]);
 
     const onAddProduct = React.useCallback(() => {
-        // router.navigate(`/create-product?warehouseId=${params.id}`);
+        router.navigate(`/product/create?warehouseId=${params.id}`);
     }, [params.id]);
 
     return {
