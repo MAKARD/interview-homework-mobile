@@ -46,5 +46,5 @@ export namespace CreateWarehouseItem {
 
     export type RequestDTO = Pick<WarehouseItem, "description" | "imageUrl" | "name" | "quantity" | "unitPrice">;
 
-    export type ResponseDTO = Warehouse;
+    export type ResponseDTO = WarehouseItem;
 }
