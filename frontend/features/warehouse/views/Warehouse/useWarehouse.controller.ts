@@ -1,0 +1,34 @@
+import * as React from 'react';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+
+import { useWarehouse as useWarehouseStore } from '../../stores/warehouse.store';
+
+export const useWarehouse = () => {
+    const params = useLocalSearchParams<{ id: string, name: string }>();
+    const router = useRouter();
+    
+    const [isLoading, setLoading] = React.useState(true);
+
+    const fetchWarehouseDetails = useWarehouseStore((state) => state.fetchWarehouseDetails);
+    const products = useWarehouseStore((state) => state.warehouseDetails?.products || []);
+
+    React.useEffect(() => {
+        fetchWarehouseDetails(params.id).then(() => setLoading(false));
+    }, [params.id]);
+
+    const onAddProduct = React.useCallback(() => {
+        router.navigate(`/warehouse/${params.id}/product/create`);
+    }, [params.id]);
+
+    const onViewShipments = React.useCallback(() => {
+        router.navigate(`/warehouse/${params.id}/shipments`);
+    }, [params.id]);
+
+    return {
+        isLoading,
+        products,
+        warehouseId: params.id,
+        onAddProduct,
+        onViewShipments
+    }
+};
