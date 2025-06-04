@@ -3,16 +3,18 @@ import { useRouter } from 'expo-router';
 
 interface Params {
     id: string;
+    name: string;
 }
 
 export const useWarehouseItem = ({
-    id
+    id,
+    name
 }: Params) => {
     const router = useRouter();
 
     const onPress = React.useCallback(() => {
-        // router.navigate('/home')
-    }, [id]);
+        router.navigate(`/warehouse?id=${id}&name=${name}`);
+    }, [id, name]);
 
     return {
         onPress

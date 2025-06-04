@@ -11,7 +11,8 @@ const Warehouse: React.FC = () => {
         isLoading,
         products,
         warehouseId,
-        onAddProduct
+        onAddProduct,
+        onViewShipments
     } = useWarehouse();
 
     if (isLoading) {
@@ -25,6 +26,11 @@ const Warehouse: React.FC = () => {
             <Pressable onPress={onAddProduct}>
                 <Text>
                     Add product
+                </Text>
+            </Pressable>
+            <Pressable onPress={onViewShipments}>
+                <Text>
+                    View shipments
                 </Text>
             </Pressable>
             <ScrollView>

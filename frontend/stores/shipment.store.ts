@@ -9,11 +9,14 @@ const getShipmentsList = HTTPService.createRequest<GetShipmentsList.ResponseDTO,
 
 interface ShipmentStore {
     shipments: Array<Shipment>;
+
+    fetchShipmentsInWarehouse(warehouseId: string): Promise<void>;
+    clearShipments(): void;
 }
 
 export const useShipment = create<ShipmentStore>()(immer((set) => ({
     shipments: [],
-    fetchShipmentsInWarehouse: async (warehouseId: string) => {
+    fetchShipmentsInWarehouse: async (warehouseId) => {
         const response = await getShipmentsList({
             body: {},
             queryParams: {},

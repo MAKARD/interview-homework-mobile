@@ -12,7 +12,7 @@ export const WarehouseItem: React.FC<Props> = ({
     id,
     name
 }) => {
-    const { onPress } = useWarehouseItem({ id });
+    const { onPress } = useWarehouseItem({ id, name });
 
     return (
         <Pressable onPress={onPress}>

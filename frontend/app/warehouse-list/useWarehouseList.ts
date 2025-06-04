@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { useWarehouse } from '@/stores/warehouse.store';
 
-export const useHome = () => {
+export const useWarehouseList = () => {
     const [isLoading, setLoading] = React.useState(true);
 
     const fetchWarehouses = useWarehouse((state) => state.fetchWarehouses);

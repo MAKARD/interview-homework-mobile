@@ -3,14 +3,14 @@ import { ScrollView, View } from 'react-native';
 
 import { Placeholder, WarehouseItem } from './components';
 
-import { useHome } from './useHome';
+import { useWarehouseList } from './useWarehouseList';
 import { styles } from './styles';
 
-const Home: React.FC = () => {
+const WarehouseList: React.FC = () => {
     const {
         isLoading,
         warehouses
-    } = useHome();
+    } = useWarehouseList();
 
     if (isLoading) {
         return (
@@ -33,4 +33,4 @@ const Home: React.FC = () => {
     );
 }
 
-export default Home;
+export default WarehouseList;

@@ -20,10 +20,15 @@ export const useWarehouse = () => {
         router.navigate(`/product/create?warehouseId=${params.id}`);
     }, [params.id]);
 
+    const onViewShipments = React.useCallback(() => {
+        router.navigate(`/shipments?warehouseId=${params.id}`);
+    }, [params.id]);
+
     return {
         isLoading,
         products,
         warehouseId: params.id,
-        onAddProduct
+        onAddProduct,
+        onViewShipments
     }
 };
