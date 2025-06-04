@@ -5,11 +5,12 @@ import {
 	View,
 	ViewStyle,
 } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
-import { WarehouseItem } from "@/models/WarehouseItem";
-import { IconSymbol } from "@/components/ui/IconSymbol";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { Colors } from "@/constants/Colors";
+import { ThemedText } from "@/ui/components/ThemedText";
+
+import { IconSymbol } from "@/ui/components/IconSymbol";
+import { useColorScheme } from "@/ui/hooks/useColorScheme";
+import { Colors } from "@/ui/constants/Colors";
+import { WarehouseItem } from "@/domain/models/WarehouseItem.model";
 
 export type ProductListingProps = {
 	item: WarehouseItem;
