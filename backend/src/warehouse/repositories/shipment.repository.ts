@@ -1,11 +1,13 @@
 import { Injectable } from '@nestjs/common';
 
-import shipmentsAllMock from './mocks/shipments-all.mock.json';
+import * as shipmentsAllMock from './mocks/shipments-all.mock.json';
 import { Shipment } from '../models/Shipment.model';
 
 @Injectable()
 export class ShipmentRepository {
-	constructor(private inMemoryShipments: Array<Shipment>) {
+	private inMemoryShipments: Array<Shipment>;
+
+	constructor() {
 		this.inMemoryShipments = shipmentsAllMock as Array<Shipment>;
 	}
 

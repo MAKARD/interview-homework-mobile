@@ -49,7 +49,7 @@ export class WarehouseProductController {
 		}
 	}
 
-	@Post('/:id')
+	@Post('/')
 	public async createOne(
 		@Param('warehouseId') warehouseId: string,
 		@Body() createProductDto: CreateProductRequestDto,

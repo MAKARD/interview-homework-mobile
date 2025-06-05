@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 
-import warehouseAllMock from './mocks/warehouse-all.mock.json';
+import * as warehouseAllMock from './mocks/warehouse-all.mock.json';
 import { Warehouse } from '../models/warehouse.model';
 import { WarehouseItem } from '../models/Warehouse-item.model';
 
 @Injectable()
 export class WarehouseRepository {
-	constructor(private inMemoryWarehouses: Array<Warehouse>) {
+	private inMemoryWarehouses: Array<Warehouse>;
+
+	constructor() {
 		this.inMemoryWarehouses = warehouseAllMock;
 	}
 

@@ -1,5 +1,5 @@
-import { warehouseItem } from '../models/Warehouse-item.model';
+import { WarehouseItem } from '../models/warehouse-item.model';
 
 export interface GetAllWarehousesResponseDto {
-	warehouses: Array<warehouseItem>;
+	warehouses: Array<WarehouseItem>;
 }
