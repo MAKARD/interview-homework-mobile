@@ -1,25 +1,31 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
-import { 
-    GetWarehouseDetails,
-    GetWarehouseList,
-    DeleteWarehouseItem,
-    EditWarehouseItem,
-    CreateWarehouseItem
-} from '@/domain/apis/warehouse.api';
 import { Warehouse } from '@/domain/models/Warehouse.model';
+import { WarehouseItem } from '@/domain/models/WarehouseItem.model';
+
 import { HTTPService } from '@/infrastructure/services/HTTPService';
+
+import { GetWarehouseDetails, GetWarehouseList } from '@/domain/apis/warehouse.api';
+import { CreateProduct, DeleteProduct, EditProduct } from '@/domain/apis/product.api';
 
 const getWarehouseList = HTTPService.createRequest<GetWarehouseList.ResponseDTO, {}, {}>(GetWarehouseList.api);
 const getWarehouseDetails = HTTPService.createRequest<GetWarehouseDetails.ResponseDTO, {}, {}>(GetWarehouseDetails.api);
-const deleteWarehouseItem = HTTPService.createRequest<{}, {}, {}>(DeleteWarehouseItem.api);
-const editWarehouseItem = HTTPService.createRequest<{}, EditWarehouseItem.RequestDTO, {}>(EditWarehouseItem.api);
-const createWarehouseItem = HTTPService.createRequest<CreateWarehouseItem.ResponseDTO, CreateWarehouseItem.RequestDTO, {}>(CreateWarehouseItem.api);
+const deleteProduct = HTTPService.createRequest<{}, {}, {}>(DeleteProduct.api);
+const editProduct = HTTPService.createRequest<{}, EditProduct.RequestDTO, {}>(EditProduct.api);
+const createProduct = HTTPService.createRequest<CreateProduct.ResponseDTO, CreateProduct.RequestDTO, {}>(CreateProduct.api);
 
 interface WarehouseStore {
-    warehouses: Array<Warehouse>;
+    warehouses: Array<WarehouseItem>;
     warehouseDetails?: Warehouse;
+
+    clearWarehouseDetails(): void;
+    fetchWarehouses(): Promise<void>;
+    fetchWarehouseDetails(warehouseId: string): Promise<void>;
+
+    deleteProduct(warehouseId: string, productId: string): Promise<void>;
+    editProduct(warehouseId: string, productId: string, data: EditProduct.RequestDTO): Promise<void>;
+    createProduct(warehouseId: string, data: CreateProduct.RequestDTO): Promise<void>;
 }
 
 export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
@@ -40,7 +46,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouses: response.warehouses
         });
     },
-    fetchWarehouseDetails: async (warehouseId: string) => {
+    fetchWarehouseDetails: async (warehouseId) => {
         const response = await getWarehouseDetails({
             body: {},
             queryParams: {},
@@ -51,8 +57,8 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouseDetails: response,
         });
     },
-    deleteWarehouseItem: async (warehouseId: string, warehouseItemId: string) => {
-        await deleteWarehouseItem({
+    deleteProduct: async (warehouseId, warehouseItemId) => {
+        await deleteProduct({
             body: {},
             queryParams: {},
             pathParams: {
@@ -62,35 +68,29 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
         });
 
         set((state) => {
-            const warehouse = state.warehouses
-                .find((warehouse) => warehouse.id === warehouseId);
-
-            if (!warehouse) {
+            if (!state.warehouseDetails) {
                 return;
             }
 
-            warehouse.products = warehouse.products.filter((product) => product.id !== warehouseItemId);
+            state.warehouseDetails.products = state.warehouseDetails.products.filter((product) => product.id !== warehouseItemId);
         });
     },
-    editWarehouseItem: async (warehouseId: string, warehouseItemId: string, data: EditWarehouseItem.RequestDTO) => {
-        await editWarehouseItem({
+    editProduct: async (warehouseId, productId, data) => {
+        await editProduct({
             body: data,
             queryParams: {},
             pathParams: {
                 warehouseId,
-                warehouseItemId
+                productId
             }
         });
 
         set((state) => {
-            const warehouse = state.warehouses
-                .find((warehouse) => warehouse.id === warehouseId);
-
-            if (!warehouse) {
+            if (!state.warehouseDetails) {
                 return;
             }
 
-            const product = warehouse.products.find((product) => product.id === warehouseItemId);
+            const product = state.warehouseDetails.products.find((product) => product.id === productId);
 
             if (!product) {
                 return;
@@ -103,8 +103,8 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             product.unitPrice = data.unitPrice || product.unitPrice;
         });
     },
-    createWarehouseItem: async (warehouseId: string, data: CreateWarehouseItem.RequestDTO) => {
-        const response = await createWarehouseItem({
+    createProduct: async (warehouseId, data) => {
+        const response = await createProduct({
             body: data,
             queryParams: {},
             pathParams: {
@@ -113,14 +113,11 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
         });
 
         set((state) => {
-            const warehouse = state.warehouses
-                .find((warehouse) => warehouse.id === warehouseId);
-
-            if (!warehouse) {
+            if (!state.warehouseDetails) {
                 return;
             }
 
-            warehouse.products.push(response);
+            state.warehouseDetails.products.push(response);
         });
     }
 })));

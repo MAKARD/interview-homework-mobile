@@ -5,16 +5,18 @@ import { GetShipmentsList } from '@/domain/apis/shipment.api';
 import { Shipment } from '@/domain/models/Shipment.model';
 import { HTTPService } from '@/infrastructure/services/HTTPService';
 
-
 const getShipmentsList = HTTPService.createRequest<GetShipmentsList.ResponseDTO, {}, {}>(GetShipmentsList.api);
 
 interface ShipmentStore {
     shipments: Array<Shipment>;
+
+    fetchShipmentsInWarehouse(warehouseId: string): Promise<void>;
+    clearShipments(): void;
 }
 
 export const useShipment = create<ShipmentStore>()(immer((set) => ({
     shipments: [],
-    fetchShipmentsInWarehouse: async (warehouseId: string) => {
+    fetchShipmentsInWarehouse: async (warehouseId) => {
         const response = await getShipmentsList({
             body: {},
             queryParams: {},
