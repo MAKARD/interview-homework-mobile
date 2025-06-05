@@ -1,0 +1,45 @@
+[
+  {
+    "id": "warehouse-1",
+    "name": "Central Warehouse",
+    "products": [
+      {
+        "id": "prod-001",
+        "imageUrl": "https://example.com/img/prod-001.jpg",
+        "name": "Widget A",
+        "description": "A basic widget",
+        "quantity": 100,
+        "unitPrice": 9.99
+      },
+      {
+        "id": "prod-002",
+        "imageUrl": "https://example.com/img/prod-002.jpg",
+        "name": "Widget B",
+        "description": "An advanced widget",
+        "quantity": 50,
+        "unitPrice": 19.99
+      }
+    ]
+  },
+  {
+    "id": "warehouse-2",
+    "name": "North Warehouse",
+    "products": [
+      {
+        "id": "prod-003",
+        "imageUrl": "https://example.com/img/prod-003.jpg",
+        "name": "Gadget C",
+        "description": "A useful gadget",
+        "quantity": 75,
+        "unitPrice": 14.5
+      },
+      {
+        "id": "prod-004",
+        "name": "Gadget D",
+        "description": "A multi-purpose gadget",
+        "quantity": 20,
+        "unitPrice": 29.95
+      }
+    ]
+  }
+]

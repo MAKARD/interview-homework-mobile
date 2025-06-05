@@ -1,0 +1,182 @@
+[
+  {
+    "id": "shipment-001",
+    "warehouseId": "warehouse-1",
+    "destination": "123 Main St, Springfield",
+    "items": [
+      {
+        "id": "item-001",
+        "quantity": 10,
+        "products": [
+          {
+            "id": "prod-001",
+            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "name": "Widget A",
+            "description": "A basic widget",
+            "quantity": 100,
+            "unitPrice": 9.99
+          }
+        ]
+      },
+      {
+        "id": "item-002",
+        "quantity": 5,
+        "products": [
+          {
+            "id": "prod-002",
+            "imageUrl": "https://example.com/img/prod-002.jpg",
+            "name": "Widget B",
+            "description": "An advanced widget",
+            "quantity": 50,
+            "unitPrice": 19.99
+          }
+        ]
+      },
+      {
+        "id": "item-003",
+        "quantity": 2,
+        "products": [
+          {
+            "id": "prod-003",
+            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "name": "Gadget C",
+            "description": "A useful gadget",
+            "quantity": 75,
+            "unitPrice": 14.5
+          }
+        ]
+      }
+    ],
+    "createdAt": 1717500000000,
+    "updatedAt": 1717503600000,
+    "status": "in_transit",
+    "notes": "Handle with care"
+  },
+  {
+    "id": "shipment-002",
+    "warehouseId": "warehouse-2",
+    "destination": "456 Industrial Rd, Capital City",
+    "items": [
+      {
+        "id": "item-004",
+        "quantity": 3,
+        "products": [
+          {
+            "id": "prod-004",
+            "name": "Gadget D",
+            "description": "A multi-purpose gadget",
+            "quantity": 20,
+            "unitPrice": 29.95
+          }
+        ]
+      },
+      {
+        "id": "item-005",
+        "quantity": 7,
+        "products": [
+          {
+            "id": "prod-001",
+            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "name": "Widget A",
+            "description": "A basic widget",
+            "quantity": 100,
+            "unitPrice": 9.99
+          }
+        ]
+      }
+    ],
+    "createdAt": 1717480000000,
+    "updatedAt": 1717488000000,
+    "status": "delivered"
+  },
+  {
+    "id": "shipment-003",
+    "warehouseId": "warehouse-1",
+    "destination": "789 Commerce Blvd, Ogdenville",
+    "items": [
+      {
+        "id": "item-006",
+        "quantity": 12,
+        "products": [
+          {
+            "id": "prod-002",
+            "imageUrl": "https://example.com/img/prod-002.jpg",
+            "name": "Widget B",
+            "description": "An advanced widget",
+            "quantity": 50,
+            "unitPrice": 19.99
+          }
+        ]
+      },
+      {
+        "id": "item-007",
+        "quantity": 4,
+        "products": [
+          {
+            "id": "prod-003",
+            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "name": "Gadget C",
+            "description": "A useful gadget",
+            "quantity": 75,
+            "unitPrice": 14.5
+          }
+        ]
+      },
+      {
+        "id": "item-008",
+        "quantity": 1,
+        "products": [
+          {
+            "id": "prod-004",
+            "name": "Gadget D",
+            "description": "A multi-purpose gadget",
+            "quantity": 20,
+            "unitPrice": 29.95
+          }
+        ]
+      }
+    ],
+    "createdAt": 1717400000000,
+    "updatedAt": 1717410000000,
+    "status": "pending"
+  },
+  {
+    "id": "shipment-004",
+    "warehouseId": "warehouse-2",
+    "destination": "101 State St, Shelbyville",
+    "items": [
+      {
+        "id": "item-009",
+        "quantity": 8,
+        "products": [
+          {
+            "id": "prod-003",
+            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "name": "Gadget C",
+            "description": "A useful gadget",
+            "quantity": 75,
+            "unitPrice": 14.5
+          }
+        ]
+      },
+      {
+        "id": "item-010",
+        "quantity": 6,
+        "products": [
+          {
+            "id": "prod-001",
+            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "name": "Widget A",
+            "description": "A basic widget",
+            "quantity": 100,
+            "unitPrice": 9.99
+          }
+        ]
+      }
+    ],
+    "createdAt": 1717350000000,
+    "updatedAt": 1717358000000,
+    "status": "cancelled",
+    "notes": "Order cancelled by recipient"
+  }
+]

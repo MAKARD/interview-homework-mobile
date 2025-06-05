@@ -5,7 +5,7 @@ import { API } from "./api";
 export namespace GetWarehouseList {
     export const api: API = {
         method: 'GET',
-        path: '/warehouses'
+        path: '/warehouse'
     }
 
     export interface ResponseDTO {
@@ -16,7 +16,7 @@ export namespace GetWarehouseList {
 export namespace GetWarehouseDetails {
     export const api: API = {
         method: 'GET',
-        path: '/warehouses/:warehouseId'
+        path: '/warehouse/:warehouseId'
     }
 
     export type ResponseDTO = Warehouse;
