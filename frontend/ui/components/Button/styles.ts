@@ -13,7 +13,7 @@ const type = StyleSheet.create({
         backgroundColor: Colors.light.tint
     },
     secondary: {
-
+        backgroundColor: Colors.light.secondary,
     }
 });
 

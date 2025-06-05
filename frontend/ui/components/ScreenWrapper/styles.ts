@@ -9,5 +9,17 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.light.background,
         
         paddingHorizontal: 15,
-    }
+    },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        overflow: 'hidden',
+    },
+    backButton: {
+       position: 'absolute',
+       top: 8,
+       left: 0
+    },
 });

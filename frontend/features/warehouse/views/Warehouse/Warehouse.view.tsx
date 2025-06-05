@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { Product } from '../../components';
 
 import { useWarehouse } from './useWarehouse.controller';
 import { Placeholder } from './components';
 import { styles } from './styles';
+import { Button, ScreenWrapper } from '@/ui/components';
 
 export const Warehouse: React.FC = () => {
     const {
@@ -13,7 +14,8 @@ export const Warehouse: React.FC = () => {
         products,
         warehouseId,
         onAddProduct,
-        onViewShipments
+        onViewShipments,
+        warehouseName
     } = useWarehouse();
 
     if (isLoading) {
@@ -23,17 +25,23 @@ export const Warehouse: React.FC = () => {
     }
 
     return (
-        <View style={styles.container}>
-            <Pressable onPress={onAddProduct}>
-                <Text>
+        <ScreenWrapper headerTitle={warehouseName}>
+            <View style={styles.topButtons}>
+                <Button
+                    onPress={onAddProduct}
+                    variant="secondary"
+                    style={styles.topButton}
+                >
                     Add product
-                </Text>
-            </Pressable>
-            <Pressable onPress={onViewShipments}>
-                <Text>
+                </Button>
+                <Button
+                    onPress={onViewShipments}
+                    variant="secondary"
+                    style={styles.topButton}
+                >
                     View shipments
-                </Text>
-            </Pressable>
+                </Button>
+            </View>
             <ScrollView>
                 {products.map((product) => (
                     <Product
@@ -48,6 +56,6 @@ export const Warehouse: React.FC = () => {
                     />
                 ))}
             </ScrollView>
-        </View>
+        </ScreenWrapper>
     );
 }

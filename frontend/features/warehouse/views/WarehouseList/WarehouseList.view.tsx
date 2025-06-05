@@ -20,10 +20,7 @@ export const WarehouseList: React.FC = () => {
     }
 
     return (
-        <ScreenWrapper>
-            <Text size="large">
-                Available warehouses
-            </Text>
+        <ScreenWrapper headerTitle='Available warehouses'>
             <ScrollView
                 style={styles.list}
             >

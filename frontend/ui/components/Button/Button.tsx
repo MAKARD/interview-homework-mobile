@@ -1,24 +1,24 @@
 import * as React from 'react';
-import { Pressable } from 'react-native';
+import { Pressable, PressableProps, StyleProp, ViewStyle } from 'react-native';
 
 import { Text } from '../Text';
 import { styles } from './styles';
 
-interface Props {
-    children: string;
-    onPress: () => void;
+interface Props extends Omit<PressableProps, "children" | "style"> {
     variant: "primary" | "secondary";
+    style?: StyleProp<ViewStyle>;
 }
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<React.PropsWithChildren<Props>> = ({
     children,
-    onPress,
-    variant
+    variant,
+    style,
+    ...pressableProps
 }) => {
     return (
         <Pressable
-            onPress={onPress}
-            style={[styles.base.wrapper, styles.type[variant]]}
+            style={[styles.base.wrapper, styles.type[variant], style]}
+            {...pressableProps}
         >
             <Text size="medium">
                 {children}

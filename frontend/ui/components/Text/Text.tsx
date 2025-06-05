@@ -1,21 +1,22 @@
 import * as React from 'react';
-import {Text as NativeText} from 'react-native';
+import {Text as NativeText, TextProps } from 'react-native';
 import { styles } from './styles';
 
-interface Props {
+interface Props extends Omit<TextProps, "style"> {
     size: "large" | "medium" | "small";
     variant?: "dark-background" | "light-background";
-    children: string;
 }
 
 export const Text: React.FC<Props> = ({
     size,
     children,
-    variant = "light-background"
+    variant = "light-background",
+    ...textProps
 }) => {
     return (
         <NativeText
             style={[styles.sizes[size], styles.variants[variant]]}
+            {...textProps}
         >
             {children}
         </NativeText>
