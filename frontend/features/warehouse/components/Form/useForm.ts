@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import { useWarehouse } from '../../stores/warehouse.store';
 
+import { ImageLibraryService } from '@/infrastructure/services/ImageLibraryService';
+
 interface ProductData {
     name: string;
     description: string;
@@ -29,8 +31,17 @@ export const useForm = ({
         imageUrl: product?.imageUrl || ""
     });
 
-    const onChangeImage = React.useCallback(() => {
+    const onChangeImage = React.useCallback(async () => {
+        const imageUrl = await ImageLibraryService.launchLibrary();
 
+        if (!imageUrl) {
+            return;
+        }
+
+        setValues((state) => ({
+            ...state,
+            imageUrl,
+        }))
     }, []);
 
     const onChangeName = React.useCallback((name: string) => {

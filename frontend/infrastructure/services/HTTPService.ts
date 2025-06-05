@@ -1,5 +1,8 @@
-import { API } from '@/domain/apis/api';
 import Axios from 'axios';
+
+import { API } from '@/domain/apis/api';
+
+import { EventService } from './EventService';
 
 interface Provider {
     request: <T>(
@@ -22,18 +25,26 @@ class Service {
         QueryParamsDTO extends Record<string, string>,
     >(api: API) {
         interface Input {
-            body: RequestDTO;
-            queryParams: QueryParamsDTO;
-            pathParams: Record<string, string>
+            body?: RequestDTO;
+            queryParams?: QueryParamsDTO;
+            pathParams?: Record<string, string>
         }
 
-        return ({ body, queryParams, pathParams }: Input): Promise<ResponseDTO> => {
-            return this.provider.request<ResponseDTO>(
-                `${this.baseUrl}/${this.interpolatePath(api.path, pathParams)}`,
-                api.method,
-                body,
-                new URLSearchParams(queryParams)
-            );
+        return async ({ body, queryParams, pathParams }: Input): Promise<ResponseDTO> => {
+            try {
+                const response = await this.provider.request<ResponseDTO>(
+                    `${this.baseUrl}${this.interpolatePath(api.path, pathParams)}`,
+                    api.method,
+                    body,
+                    new URLSearchParams(queryParams)
+                );
+
+                return response;
+            } catch (error) {
+                EventService.emit('network_error', error);
+
+                throw error;
+            }
         }
     }
 
@@ -71,6 +82,6 @@ export const HTTPService = new Service({
             url: path,
             data: body,
             params
-        })
+        }).then((response) => response.data)
     }
-}, 'http://localhost:3000/v1');
+}, 'http://localhost:3000');

@@ -8,12 +8,15 @@ import { HTTPService } from '@/infrastructure/services/HTTPService';
 
 import { GetWarehouseDetails, GetWarehouseList } from '@/domain/apis/warehouse.api';
 import { CreateProduct, DeleteProduct, EditProduct } from '@/domain/apis/product.api';
+import { UploadImage } from '@/domain/apis/files.api';
 
 const getWarehouseList = HTTPService.createRequest<GetWarehouseList.ResponseDTO, {}, {}>(GetWarehouseList.api);
 const getWarehouseDetails = HTTPService.createRequest<GetWarehouseDetails.ResponseDTO, {}, {}>(GetWarehouseDetails.api);
 const deleteProduct = HTTPService.createRequest<{}, {}, {}>(DeleteProduct.api);
 const editProduct = HTTPService.createRequest<{}, EditProduct.RequestDTO, {}>(EditProduct.api);
 const createProduct = HTTPService.createRequest<CreateProduct.ResponseDTO, CreateProduct.RequestDTO, {}>(CreateProduct.api);
+
+const uploadImage = HTTPService.createRequest<{}, UploadImage.RequestDTO, {}>(UploadImage.api);
 
 interface WarehouseStore {
     warehouses: Array<WarehouseItem>;
@@ -36,11 +39,7 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
         });
     },
     fetchWarehouses: async () => {
-        const response = await getWarehouseList({
-            body: {},
-            queryParams: {},
-            pathParams: {}
-        });
+        const response = await getWarehouseList({});
 
         set({
             warehouses: response.warehouses
@@ -48,8 +47,6 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
     },
     fetchWarehouseDetails: async (warehouseId) => {
         const response = await getWarehouseDetails({
-            body: {},
-            queryParams: {},
             pathParams: { warehouseId }
         });
 
@@ -57,13 +54,11 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
             warehouseDetails: response,
         });
     },
-    deleteProduct: async (warehouseId, warehouseItemId) => {
+    deleteProduct: async (warehouseId, productId) => {
         await deleteProduct({
-            body: {},
-            queryParams: {},
             pathParams: {
                 warehouseId,
-                warehouseItemId
+                productId
             }
         });
 
@@ -72,13 +67,26 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
                 return;
             }
 
-            state.warehouseDetails.products = state.warehouseDetails.products.filter((product) => product.id !== warehouseItemId);
+            state.warehouseDetails.products = state.warehouseDetails.products.filter((product) => product.id !== productId);
         });
     },
     editProduct: async (warehouseId, productId, data) => {
+        if (data.imageUrl) {
+            const formData = new FormData();
+
+            formData.append('file', {
+                uri: data.imageUrl,
+                name: 'photo.jpg',
+                type: 'image/jpeg',
+            } as any);
+
+            await uploadImage({
+                body: formData
+            });
+        }
+
         await editProduct({
             body: data,
-            queryParams: {},
             pathParams: {
                 warehouseId,
                 productId
@@ -106,7 +114,6 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
     createProduct: async (warehouseId, data) => {
         const response = await createProduct({
             body: data,
-            queryParams: {},
             pathParams: {
                 warehouseId
             }

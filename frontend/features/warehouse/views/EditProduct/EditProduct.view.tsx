@@ -6,23 +6,18 @@ import { Loader } from '@/ui/components';
 import { Form } from '../../components';
 
 import { useEditProduct } from './useEditProduct.controller';
+import { styles } from './styles';
 
 export const EditProduct: React.FC = () => {
     const {
         isLoading,
         onCancel,
         onProceed,
-        imageUrl,
         productId
     } = useEditProduct();
 
     return (
-        <View>
-            {imageUrl && (
-                <Image
-                    source={{ uri: imageUrl }}
-                />
-            )}
+        <View style={styles.container}>
             <Form
                 productId={productId}
                 onSave={onProceed}

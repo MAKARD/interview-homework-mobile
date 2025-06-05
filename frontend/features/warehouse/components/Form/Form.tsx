@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Pressable, Text } from 'react-native';
+import { Image, Pressable, Text } from 'react-native';
 
 import { ProductInput } from '../ProductInput';
 import { useForm, UseFormParams } from './useForm';
+import { styles } from './styles';
 
-interface Props extends UseFormParams {}
+interface Props extends UseFormParams { }
 
 export const Form: React.FC<Props> = ({
     onSave,
@@ -20,7 +21,8 @@ export const Form: React.FC<Props> = ({
         onChangeDescription,
         onChangeQuantity,
         onChangeUnitPrice,
-        onSavePress
+        onSavePress,
+        imageUrl
     } = useForm({ onSave, productId });
 
     return (
@@ -49,6 +51,12 @@ export const Form: React.FC<Props> = ({
                 type="numeric"
                 defaultValue={unitPrice}
             />
+            {imageUrl && (
+                <Image
+                    source={{ uri: imageUrl }}
+                    style={styles.image}
+                />
+            )}
             <Pressable onPress={onChangeImage}>
                 <Text>Change image</Text>
             </Pressable>
