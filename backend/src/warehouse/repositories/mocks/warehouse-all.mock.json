@@ -5,7 +5,7 @@
     "products": [
       {
         "id": "prod-001",
-        "imageUrl": "https://example.com/img/prod-001.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Widget A",
         "description": "A basic widget for everyday use",
         "quantity": 100,
@@ -13,7 +13,7 @@
       },
       {
         "id": "prod-002",
-        "imageUrl": "https://example.com/img/prod-002.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Widget B",
         "description": "An advanced widget with extra features",
         "quantity": 50,
@@ -21,7 +21,7 @@
       },
       {
         "id": "prod-003",
-        "imageUrl": "https://example.com/img/prod-003.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Gadget C",
         "description": "A compact and efficient gadget",
         "quantity": 75,
@@ -35,7 +35,7 @@
     "products": [
       {
         "id": "prod-004",
-        "imageUrl": "https://example.com/img/prod-004.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Gadget D",
         "description": "A multi-purpose gadget with modular parts",
         "quantity": 20,
@@ -43,7 +43,7 @@
       },
       {
         "id": "prod-005",
-        "imageUrl": "https://example.com/img/prod-005.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Component E",
         "description": "A reliable electronic component",
         "quantity": 200,
@@ -51,7 +51,7 @@
       },
       {
         "id": "prod-006",
-        "imageUrl": "https://example.com/img/prod-006.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Component F",
         "description": "Spare part for machinery",
         "quantity": 120,
@@ -65,7 +65,7 @@
     "products": [
       {
         "id": "prod-007",
-        "imageUrl": "https://example.com/img/prod-007.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Accessory G",
         "description": "Mobile accessory with ergonomic grip",
         "quantity": 300,
@@ -73,7 +73,7 @@
       },
       {
         "id": "prod-008",
-        "imageUrl": "https://example.com/img/prod-008.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Accessory H",
         "description": "Fashionable wearable tech band",
         "quantity": 80,
@@ -81,7 +81,7 @@
       },
       {
         "id": "prod-009",
-        "imageUrl": "https://example.com/img/prod-009.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Tool I",
         "description": "Handheld tool for precision tasks",
         "quantity": 60,
@@ -95,7 +95,7 @@
     "products": [
       {
         "id": "prod-010",
-        "imageUrl": "https://example.com/img/prod-010.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Tool J",
         "description": "Industrial-grade cutting tool",
         "quantity": 40,
@@ -103,7 +103,7 @@
       },
       {
         "id": "prod-011",
-        "imageUrl": "https://example.com/img/prod-011.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Kit K",
         "description": "Repair kit with multiple heads",
         "quantity": 25,
@@ -111,7 +111,7 @@
       },
       {
         "id": "prod-012",
-        "imageUrl": "https://example.com/img/prod-012.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Meter L",
         "description": "Digital multimeter",
         "quantity": 90,
@@ -125,7 +125,7 @@
     "products": [
       {
         "id": "prod-013",
-        "imageUrl": "https://example.com/img/prod-013.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Battery M",
         "description": "Long-life battery",
         "quantity": 300,
@@ -133,7 +133,7 @@
       },
       {
         "id": "prod-014",
-        "imageUrl": "https://example.com/img/prod-014.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Charger N",
         "description": "Fast charger with USB-C",
         "quantity": 110,
@@ -141,7 +141,7 @@
       },
       {
         "id": "prod-015",
-        "imageUrl": "https://example.com/img/prod-015.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Cable O",
         "description": "Braided cable 1.5m",
         "quantity": 500,
@@ -155,7 +155,7 @@
     "products": [
       {
         "id": "prod-016",
-        "imageUrl": "https://example.com/img/prod-016.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Connector P",
         "description": "Power connector",
         "quantity": 150,
@@ -163,7 +163,7 @@
       },
       {
         "id": "prod-017",
-        "imageUrl": "https://example.com/img/prod-017.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Housing Q",
         "description": "Plastic housing for components",
         "quantity": 85,
@@ -177,7 +177,7 @@
     "products": [
       {
         "id": "prod-018",
-        "imageUrl": "https://example.com/img/prod-018.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Board R",
         "description": "Control board",
         "quantity": 35,
@@ -185,7 +185,7 @@
       },
       {
         "id": "prod-019",
-        "imageUrl": "https://example.com/img/prod-019.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Sensor S",
         "description": "Proximity sensor",
         "quantity": 60,
@@ -199,7 +199,7 @@
     "products": [
       {
         "id": "prod-020",
-        "imageUrl": "https://example.com/img/prod-020.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Prototype T",
         "description": "Experimental prototype model",
         "quantity": 10,
@@ -207,7 +207,7 @@
       },
       {
         "id": "prod-021",
-        "imageUrl": "https://example.com/img/prod-021.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Debug Kit U",
         "description": "Kit for field debugging",
         "quantity": 15,
@@ -215,7 +215,7 @@
       },
       {
         "id": "prod-022",
-        "imageUrl": "https://example.com/img/prod-022.jpg",
+        "imageUrl": "http://localhost:3000/file/default.png",
         "name": "Tester V",
         "description": "Hardware testing tool",
         "quantity": 12,

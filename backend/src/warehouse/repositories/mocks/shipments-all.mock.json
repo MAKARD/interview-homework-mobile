@@ -10,7 +10,7 @@
         "products": [
           {
             "id": "prod-001",
-            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Widget A",
             "description": "A basic widget",
             "quantity": 100,
@@ -24,7 +24,7 @@
         "products": [
           {
             "id": "prod-002",
-            "imageUrl": "https://example.com/img/prod-002.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Widget B",
             "description": "An advanced widget",
             "quantity": 50,
@@ -38,7 +38,7 @@
         "products": [
           {
             "id": "prod-003",
-            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Gadget C",
             "description": "A useful gadget",
             "quantity": 75,
@@ -76,7 +76,7 @@
         "products": [
           {
             "id": "prod-001",
-            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Widget A",
             "description": "A basic widget",
             "quantity": 100,
@@ -100,7 +100,7 @@
         "products": [
           {
             "id": "prod-002",
-            "imageUrl": "https://example.com/img/prod-002.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Widget B",
             "description": "An advanced widget",
             "quantity": 50,
@@ -114,7 +114,7 @@
         "products": [
           {
             "id": "prod-003",
-            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Gadget C",
             "description": "A useful gadget",
             "quantity": 75,
@@ -151,7 +151,7 @@
         "products": [
           {
             "id": "prod-003",
-            "imageUrl": "https://example.com/img/prod-003.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Gadget C",
             "description": "A useful gadget",
             "quantity": 75,
@@ -165,7 +165,7 @@
         "products": [
           {
             "id": "prod-001",
-            "imageUrl": "https://example.com/img/prod-001.jpg",
+            "imageUrl": "http://localhost:3000/file/default.png",
             "name": "Widget A",
             "description": "A basic widget",
             "quantity": 100,
