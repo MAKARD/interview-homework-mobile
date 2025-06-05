@@ -1,0 +1,226 @@
+[
+  {
+    "id": "warehouse-1",
+    "name": "Central Warehouse",
+    "products": [
+      {
+        "id": "prod-001",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Widget A",
+        "description": "A basic widget for everyday use",
+        "quantity": 100,
+        "unitPrice": 9.99
+      },
+      {
+        "id": "prod-002",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Widget B",
+        "description": "An advanced widget with extra features",
+        "quantity": 50,
+        "unitPrice": 19.99
+      },
+      {
+        "id": "prod-003",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Gadget C",
+        "description": "A compact and efficient gadget",
+        "quantity": 75,
+        "unitPrice": 14.5
+      }
+    ]
+  },
+  {
+    "id": "warehouse-2",
+    "name": "North Warehouse",
+    "products": [
+      {
+        "id": "prod-004",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Gadget D",
+        "description": "A multi-purpose gadget with modular parts",
+        "quantity": 20,
+        "unitPrice": 29.95
+      },
+      {
+        "id": "prod-005",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Component E",
+        "description": "A reliable electronic component",
+        "quantity": 200,
+        "unitPrice": 3.75
+      },
+      {
+        "id": "prod-006",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Component F",
+        "description": "Spare part for machinery",
+        "quantity": 120,
+        "unitPrice": 6.5
+      }
+    ]
+  },
+  {
+    "id": "warehouse-3",
+    "name": "East Warehouse",
+    "products": [
+      {
+        "id": "prod-007",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Accessory G",
+        "description": "Mobile accessory with ergonomic grip",
+        "quantity": 300,
+        "unitPrice": 12.99
+      },
+      {
+        "id": "prod-008",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Accessory H",
+        "description": "Fashionable wearable tech band",
+        "quantity": 80,
+        "unitPrice": 22.0
+      },
+      {
+        "id": "prod-009",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Tool I",
+        "description": "Handheld tool for precision tasks",
+        "quantity": 60,
+        "unitPrice": 35.75
+      }
+    ]
+  },
+  {
+    "id": "warehouse-4",
+    "name": "South Warehouse",
+    "products": [
+      {
+        "id": "prod-010",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Tool J",
+        "description": "Industrial-grade cutting tool",
+        "quantity": 40,
+        "unitPrice": 55.0
+      },
+      {
+        "id": "prod-011",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Kit K",
+        "description": "Repair kit with multiple heads",
+        "quantity": 25,
+        "unitPrice": 18.49
+      },
+      {
+        "id": "prod-012",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Meter L",
+        "description": "Digital multimeter",
+        "quantity": 90,
+        "unitPrice": 27.99
+      }
+    ]
+  },
+  {
+    "id": "warehouse-5",
+    "name": "West Distribution Hub",
+    "products": [
+      {
+        "id": "prod-013",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Battery M",
+        "description": "Long-life battery",
+        "quantity": 300,
+        "unitPrice": 6.75
+      },
+      {
+        "id": "prod-014",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Charger N",
+        "description": "Fast charger with USB-C",
+        "quantity": 110,
+        "unitPrice": 24.99
+      },
+      {
+        "id": "prod-015",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Cable O",
+        "description": "Braided cable 1.5m",
+        "quantity": 500,
+        "unitPrice": 4.99
+      }
+    ]
+  },
+  {
+    "id": "warehouse-6",
+    "name": "Overflow Storage",
+    "products": [
+      {
+        "id": "prod-016",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Connector P",
+        "description": "Power connector",
+        "quantity": 150,
+        "unitPrice": 2.5
+      },
+      {
+        "id": "prod-017",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Housing Q",
+        "description": "Plastic housing for components",
+        "quantity": 85,
+        "unitPrice": 7.3
+      }
+    ]
+  },
+  {
+    "id": "warehouse-7",
+    "name": "Remote Warehouse",
+    "products": [
+      {
+        "id": "prod-018",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Board R",
+        "description": "Control board",
+        "quantity": 35,
+        "unitPrice": 45.0
+      },
+      {
+        "id": "prod-019",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Sensor S",
+        "description": "Proximity sensor",
+        "quantity": 60,
+        "unitPrice": 33.99
+      }
+    ]
+  },
+  {
+    "id": "warehouse-8",
+    "name": "Prototype Lab",
+    "products": [
+      {
+        "id": "prod-020",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Prototype T",
+        "description": "Experimental prototype model",
+        "quantity": 10,
+        "unitPrice": 199.0
+      },
+      {
+        "id": "prod-021",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Debug Kit U",
+        "description": "Kit for field debugging",
+        "quantity": 15,
+        "unitPrice": 89.5
+      },
+      {
+        "id": "prod-022",
+        "imageUrl": "http://localhost:3000/file/default.png",
+        "name": "Tester V",
+        "description": "Hardware testing tool",
+        "quantity": 12,
+        "unitPrice": 130.0
+      }
+    ]
+  }
+]

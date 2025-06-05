@@ -96,11 +96,11 @@ export const useWarehouse = create<WarehouseStore>()(immer((set) => ({
                 return;
             }
 
-            product.description = data.description || product.description;
-            product.imageUrl = data.imageUrl || product.imageUrl;
-            product.name = data.name || product.name;
-            product.quantity = data.quantity || product.quantity;
-            product.unitPrice = data.unitPrice || product.unitPrice;
+            product.description = data.description ?? product.description;
+            product.imageUrl = data.imageUrl ?? product.imageUrl;
+            product.name = data.name ?? product.name;
+            product.quantity = data.quantity ?? product.quantity;
+            product.unitPrice = data.unitPrice ?? product.unitPrice;
         });
     },
     createProduct: async (warehouseId, data) => {
