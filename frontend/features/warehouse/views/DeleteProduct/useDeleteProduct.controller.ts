@@ -20,7 +20,7 @@ export const useDeleteProduct = () => {
 
         await deleteProduct(params.warehouseId, params.productId);
 
-        setLoading(false);
+        router.back();
     }, [params.productId, params.warehouseId]);
 
     return {

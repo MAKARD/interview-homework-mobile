@@ -18,8 +18,6 @@ export const useShipment = create<ShipmentStore>()(immer((set) => ({
     shipments: [],
     fetchShipmentsInWarehouse: async (warehouseId) => {
         const response = await getShipmentsList({
-            body: {},
-            queryParams: {},
             pathParams: {
                 warehouseId
             }

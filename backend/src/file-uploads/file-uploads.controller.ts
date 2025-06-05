@@ -7,6 +7,7 @@ import {
 	Param,
 	Res,
 } from '@nestjs/common';
+import { v4 as uuidv4 } from 'uuid';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { Response } from 'express';
@@ -24,16 +25,15 @@ export class FileUploadsController {
 			storage: diskStorage({
 				destination: './uploads',
 				filename: (req, file, cb) => {
-					const uniqueSuffix =
-						Date.now() + '-' + Math.round(Math.random() * 1e9);
+					const uniqueSuffix = uuidv4();
+
 					cb(null, uniqueSuffix + extname(file.originalname));
 				},
 			}),
 		}),
 	)
 	uploadFile(@UploadedFile() file: Express.Multer.File) {
-		console.log('file', file);
-		return { filename: file.filename, path: `/files/${file.filename}` };
+		return { filename: file.filename };
 	}
 
 	@Get('/:filename')

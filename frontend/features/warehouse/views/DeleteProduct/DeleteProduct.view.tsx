@@ -4,6 +4,7 @@ import { Pressable, Text, View } from 'react-native';
 import { Loader } from '@/ui/components';
 
 import { useDeleteProduct } from './useDeleteProduct.controller';
+import { styles } from './styles';
 
 export const DeleteProduct: React.FC = () => {
     const {
@@ -13,7 +14,7 @@ export const DeleteProduct: React.FC = () => {
     } = useDeleteProduct();
 
     return (
-        <View>
+        <View style={styles.container}>
             <Pressable onPress={onProceed}>
                 <Text>Delete</Text>
             </Pressable>
