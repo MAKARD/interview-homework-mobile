@@ -2,6 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     wrapper: {
-        marginVertical: 5
+        flex: 1,
+    },
+    list: {
+        marginTop: 20
+    },
+    verticalMargin: {
+        height: 10
     }
 });
