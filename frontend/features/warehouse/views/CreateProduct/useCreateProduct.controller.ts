@@ -25,7 +25,7 @@ export const useCreateProduct = () => {
             data
         );
 
-        setLoading(false);
+        router.back();
     }, [params.warehouseId]);
 
     return {

@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { useWarehouseItem } from './useWarehouseItem';
+import { styles } from './styles';
+import { Button, Text } from '@/ui/components';
 
 interface Props {
     id: string;
@@ -15,11 +17,14 @@ export const WarehouseItem: React.FC<Props> = ({
     const { onPress } = useWarehouseItem({ id, name });
 
     return (
-        <Pressable onPress={onPress}>
-            <Text>
+        <View style={styles.wrapper}>
+            <Button
+                onPress={onPress}
+                variant="primary"
+            >
                 {name}
-            </Text>
-        </Pressable>
+            </Button>
+        </View>
     );
 }
 

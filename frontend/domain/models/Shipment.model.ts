@@ -1,10 +1,10 @@
-import { ShipmentItem } from "./ShipmentItem.model";
+import { Product } from "./Product.model";
 
 export interface Shipment {
     id: string;
     warehouseId: string;
     destination: string;
-    items: Array<ShipmentItem>
+    products: Array<Product>;
     createdAt: number;
     updatedAt: number;
     status: "pending" | "in_transit" | "delivered" | "cancelled";

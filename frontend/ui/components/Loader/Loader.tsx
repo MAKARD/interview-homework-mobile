@@ -1,6 +1,12 @@
 import * as React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
+
+import { styles } from './styles';
 
 export const Loader: React.FC = () => {
-    return <ActivityIndicator size="large" />
+    return (
+        <View style={styles.container}>
+            <ActivityIndicator size="large" />
+        </View>
+    )
 }

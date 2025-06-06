@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 
 import { Product as ProductModel } from '@/domain/models/Product.model';
 import { useProduct } from './useProduct';
 import { styles } from './styles';
+import { Button, Text } from '@/ui/components';
+import { Ionicons } from '@expo/vector-icons';
 
 interface Props extends ProductModel {
     warehouseId: string;
@@ -24,23 +26,49 @@ export const Product: React.FC<Props> = ({
     } = useProduct({ id, warehouseId });
 
     return (
-        <View>
-            <View>
+        <>
+            <View style={styles.container}>
                 {imageUrl && (
                     <Image
-                        source={{uri: imageUrl}}
+                        source={{ uri: imageUrl }}
                         style={styles.image}
                     />
                 )}
-                <Text>[{id}]{name} - {description} x {quantity} by {unitPrice}$</Text>
-                <Pressable onPress={onDelete}>
-                    <Text>Delete</Text>
-                </Pressable>
-                <Pressable onPress={onUpdate}>
-                    <Text>Update</Text>
-                </Pressable>
+                <View style={styles.mainText}>
+                    <Text size="medium">
+                        {name}
+                    </Text>
+                    <Text size='small'>
+                        {description}
+                    </Text>
+                </View>
+                <View style={styles.secondaryText}>
+                    <Text size="medium">
+                        x {quantity}
+                    </Text>
+                    <Text size="medium">
+                        {unitPrice}$
+                    </Text>
+                </View>
             </View>
-        </View>
+            <View style={styles.buttonsContainer}>
+                <Button
+                    variant="primary"
+                    style={styles.button}
+                    onPress={onDelete}
+                >
+                    <Ionicons name="trash" size={24} />
+                </Button>
+                <View style={styles.buttonsMargin}/>
+                <Button
+                    variant="primary"
+                    style={styles.button}
+                    onPress={onUpdate}
+                >
+                    <Ionicons name="create-outline" size={24} />
+                </Button>
+            </View>
+        </>
     );
 }
 

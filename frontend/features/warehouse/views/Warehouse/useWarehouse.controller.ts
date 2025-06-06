@@ -29,6 +29,7 @@ export const useWarehouse = () => {
         products,
         warehouseId: params.warehouseId,
         onAddProduct,
-        onViewShipments
+        onViewShipments,
+        warehouseName: params.name,
     }
 };

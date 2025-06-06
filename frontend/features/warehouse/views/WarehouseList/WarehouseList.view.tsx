@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView } from 'react-native';
+
+import { Text, ScreenWrapper } from '@/ui/components';
 
 import { WarehouseItem } from '../../components';
 
@@ -14,14 +16,14 @@ export const WarehouseList: React.FC = () => {
     } = useWarehouseList();
 
     if (isLoading) {
-        return (
-            <Placeholder />
-        )
+        return <Placeholder />;
     }
 
     return (
-        <View style={styles.container}>
-            <ScrollView>
+        <ScreenWrapper headerTitle='Available warehouses'>
+            <ScrollView
+                style={styles.list}
+            >
                 {warehouses.map((warehouse) => (
                     <WarehouseItem
                         id={warehouse.id}
@@ -30,6 +32,7 @@ export const WarehouseList: React.FC = () => {
                     />
                 ))}
             </ScrollView>
-        </View>
+               
+        </ScreenWrapper>
     );
 }
