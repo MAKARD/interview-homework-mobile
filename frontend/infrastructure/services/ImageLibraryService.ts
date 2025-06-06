@@ -4,7 +4,7 @@ interface Provider {
     launchLibrary: () => Promise<Array<{ uri: string }>>;
 }
 
-class Service {
+export class Service {
     constructor(private readonly provider: Provider) { }
 
     public async launchLibrary(): Promise<string | undefined> {

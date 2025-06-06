@@ -6,7 +6,7 @@ interface Provider {
     removeListener: (name: string, listener: (data: any) => void) => void;
 }
 
-class Service {
+export class Service {
     constructor(private readonly provider: Provider) {}
 
     emit<T>(eventName: string, data: T) {

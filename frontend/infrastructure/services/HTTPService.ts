@@ -13,7 +13,7 @@ interface Provider {
     ) => Promise<T>
 }
 
-class Service {
+export class Service {
     constructor(
         private readonly provider: Provider,
         private readonly baseUrl: string
