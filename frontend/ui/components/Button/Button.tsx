@@ -6,6 +6,7 @@ import { styles } from './styles';
 
 interface Props extends Omit<PressableProps, "children" | "style"> {
     variant: "primary" | "secondary";
+    size?: "medium" | "small";
     style?: StyleProp<ViewStyle>;
 }
 
@@ -13,6 +14,7 @@ export const Button: React.FC<React.PropsWithChildren<Props>> = ({
     children,
     variant,
     style,
+    size = "medium",
     ...pressableProps
 }) => {
     return (
@@ -20,7 +22,7 @@ export const Button: React.FC<React.PropsWithChildren<Props>> = ({
             style={[styles.base.wrapper, styles.type[variant], style]}
             {...pressableProps}
         >
-            <Text size="medium">
+            <Text size={size}>
                 {children}
             </Text>
         </Pressable>

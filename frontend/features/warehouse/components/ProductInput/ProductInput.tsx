@@ -1,4 +1,9 @@
 import * as React from 'react';
+import { TextInput, View } from 'react-native';
+
+import { Text } from '@/ui/components';
+
+import { styles } from './styles';
 
 interface Props {
     label: string;
@@ -10,7 +15,20 @@ interface Props {
 export const ProductInput: React.FC<Props> = ({
     label,
     onChange,
-    type
+    type,
+    defaultValue
 }) => {
-    return null;
+    return (
+        <View style={styles.container}>
+            <Text size='small'>
+                {label}
+            </Text>
+            <TextInput
+                onChangeText={onChange}
+                style={styles.textInput}
+                defaultValue={defaultValue.toString()}
+                keyboardType={type === 'text' ? "default" : "numeric"}
+            />
+        </View>
+    );
 }

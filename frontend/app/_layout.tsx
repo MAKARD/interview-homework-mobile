@@ -21,7 +21,7 @@ export default function RootLayout() {
 		});
 
 		return () => {
-			unsubscribe();	
+			unsubscribe();
 		}
 	}, []);
 
@@ -39,7 +39,7 @@ export default function RootLayout() {
 		<ThemeProvider
 			value={DefaultTheme}
 		>
-			<Stack screenOptions={{ headerShown: false }}/>
+			<Stack screenOptions={{ headerShown: false }} />
 			<StatusBar style="auto" />
 		</ThemeProvider>
 	);

@@ -5,6 +5,8 @@ const base = StyleSheet.create({
     wrapper: {
         padding: 10,
         borderRadius: 15,
+
+        alignItems: 'center'
     }
 });
 
