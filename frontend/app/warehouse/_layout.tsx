@@ -15,6 +15,12 @@ export default function Layout() {
           presentation: 'transparentModal',
         }}
       />
+      <Stack.Screen
+        name="[warehouseId]/product/[productId]/edit"
+        options={{
+          presentation: 'transparentModal',
+        }}
+      />
     </Stack>
   );
 }

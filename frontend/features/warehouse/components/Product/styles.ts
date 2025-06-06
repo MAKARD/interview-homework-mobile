@@ -7,7 +7,10 @@ export const styles = StyleSheet.create({
     },
     image: {
         width: 100,
-        height: 100
+        height: 100,
+
+        borderRadius: 10,
+        marginRight: 10,
     },
     mainText: {
         flex: 1,
@@ -19,7 +22,7 @@ export const styles = StyleSheet.create({
     buttonsContainer: {
         flexDirection: 'row',
         marginBottom: 25,
-        marginTop: 5
+        marginTop: 10
     },
     button: {
         flex: 1,

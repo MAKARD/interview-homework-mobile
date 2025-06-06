@@ -50,14 +50,6 @@ export const Product: React.FC<Props> = ({
                         {unitPrice}$
                     </Text>
                 </View>
-
-
-                <Pressable onPress={onDelete}>
-                    {/* <Text>Delete</Text> */}
-                </Pressable>
-                <Pressable onPress={onUpdate}>
-                    {/* <Text>Update</Text> */}
-                </Pressable>
             </View>
             <View style={styles.buttonsContainer}>
                 <Button
@@ -71,7 +63,7 @@ export const Product: React.FC<Props> = ({
                 <Button
                     variant="primary"
                     style={styles.button}
-                    onPress={onDelete}
+                    onPress={onUpdate}
                 >
                     <Ionicons name="create-outline" size={24} />
                 </Button>

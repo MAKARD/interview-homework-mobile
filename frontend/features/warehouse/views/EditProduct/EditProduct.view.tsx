@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Image, Pressable, Text, View } from 'react-native';
+import { View } from 'react-native';
 
-import { Loader } from '@/ui/components';
+import { Button, Loader, ModalWrapper } from '@/ui/components';
 
 import { Form } from '../../components';
 
@@ -17,15 +17,21 @@ export const EditProduct: React.FC = () => {
     } = useEditProduct();
 
     return (
-        <View style={styles.container}>
-            <Form
-                productId={productId}
-                onSave={onProceed}
-            />
-            <Pressable onPress={onCancel}>
-                <Text>Cancel</Text>
-            </Pressable>
-            {isLoading && <Loader />}
-        </View>
+        <ModalWrapper>
+            <View>
+                <Form
+                    onSave={onProceed}
+                    productId={productId}
+                />
+                <Button
+                    style={styles.cancelButton}
+                    variant="secondary"
+                    onPress={onCancel}
+                >
+                    Cancel
+                </Button>
+                {isLoading && <Loader />}
+            </View>
+        </ModalWrapper>
     )
 }
