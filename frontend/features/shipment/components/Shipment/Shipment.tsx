@@ -1,34 +1,60 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Shipment as ShipmentModel } from '@/domain/models/Shipment.model';
-import { ShipmenItem } from '../ShipmentItem';
 
-interface Props extends ShipmentModel {
-}
+import { Text } from '@/ui/components';
+
+import { useShipment } from './useShipment';
+import { styles } from './styles';
+import { Product } from '../Product';
+
+interface Props extends ShipmentModel { }
 
 export const Shipment: React.FC<Props> = ({
-    id,
-    warehouseId,
     destination,
-    items,
+    products,
     createdAt,
     updatedAt,
     status,
-    notes,
 }) => {
+    const {
+        createdDate,
+        updatedDate,
+        statusText
+    } = useShipment({
+        createdAt,
+        updatedAt,
+        status
+    });
 
     return (
-        <View>
-            <Text>
+        <View style={styles.card}>
+            <View style={styles.topContainer}>
+                <View style={styles.badge}>
+                    <Text size="small">
+                        {statusText}
+                    </Text>
+                </View>
+            </View>
+            <Text size="medium">
                 {destination}
             </Text>
-            {items.map((item) => (
-                <ShipmenItem
-                    id={item.id}
-                    key={item.id}
-                    quantity={item.quantity}
-                    products={item.products}
+            <Text size="small">
+                Created {createdDate}
+            </Text>
+            <Text size="small">
+                Last update {updatedDate}
+            </Text>
+            {products.map((product) => (
+                <Product
+                    id={product.id}
+                    name={product.name}
+                    key={product.id}
+                    imageUrl={product.imageUrl}
+                    description={product.description}
+                    quantity={product.quantity}
+                    unitPrice={product.unitPrice}
                 />
             ))}
         </View>
