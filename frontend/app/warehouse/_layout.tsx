@@ -9,6 +9,12 @@ export default function Layout() {
           presentation: 'transparentModal',
         }}
       />
+      <Stack.Screen
+        name="[warehouseId]/product/[productId]/delete"
+        options={{
+          presentation: 'transparentModal',
+        }}
+      />
     </Stack>
   );
 }
